@@ -1,0 +1,297 @@
+/* ROOT VARIABLES */
+
+:root {
+  --main-color: hsl(200 90% 10%);
+  --main-color-light: hsl(200 90% 30%);
+  --highlight: hsl(200 10% 90%);
+  --highlight-darker: hsl(200 10% 60%);
+  --shadow: 0 0 10px hsl(200 10% 95% / 0.1);
+  --highlight-cta: hsl(40 100% 60%);
+  --hover-cta: hsl(35 100% 50%);
+  --section-padding: 6rem 3rem;
+  --mini-margin: 5rem;
+  --smooth-transition: all 300ms ease-out;
+}
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* STYLING */
+
+html {
+  font-family: 'Reddit Sans', system-ui, sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 2rem;
+  background-color: var(--main-color);
+  color: var(--highlight);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  align-items: center;
+  box-shadow: var(--shadow);
+}
+.logo {
+  width: 200px;
+  display: block;
+}
+
+.nav-list {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link:link,
+.nav-link:visited {
+  color: var(--highlight);
+  text-decoration: none;
+  transition: var(--smooth-transition);
+}
+
+.nav-link:hover,
+.nav-link:active {
+  color: var(--highlight-cta);
+}
+
+.hero {
+  padding: var(--section-padding);
+  display: flex;
+  justify-content: space-between;
+
+  gap: 4rem;
+  align-items: flex-start;
+  align-items: center;
+}
+
+.heading-primary {
+  font-size: 6rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+}
+
+.hero-byline {
+  font-size: 3rem;
+  margin-bottom: 2.5rem;
+}
+
+.img-box,
+.hero-article {
+  flex: 1;
+}
+
+.hero-article {
+  width: 45ch;
+}
+
+.hero-cta:link,
+.hero-cta:visited {
+  text-decoration: none;
+  background-color: var(--highlight-cta);
+  color: var(--main-color);
+  padding: 2.5rem 7.5rem;
+  font-weight: 3rem;
+  font-weight: 500;
+  display: inline-block;
+  transition: var(--smooth-transition);
+}
+
+.hero-cta:hover,
+.hero-cta:active {
+  background-color: var(--hover-cta);
+  color: var(--highlight);
+}
+
+.hero-img {
+  width: auto;
+  object-fit: cover;
+}
+
+.main {
+  padding: var(--section-padding);
+}
+
+.heading-secondary {
+  font-size: 4.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.wrapper {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 5rem;
+  margin-bottom: var(--mini-margin);
+}
+
+.card {
+  flex: 1 1 auto;
+  width: 30rem;
+
+  overflow: hidden;
+}
+
+.card-text {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-weight: 500;
+  font-size: 1.8rem;
+}
+
+.main-img {
+  height: 30rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.testimonial {
+  display: flex;
+  text-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: var(--section-padding);
+  background-color: var(--highlight-darker);
+  color: var(--main-color);
+}
+
+.text {
+  width: 45ch;
+  font-size: 2.7rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.cite {
+  align-self: flex-end;
+}
+
+.cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--main-color-light);
+  padding: var(--section-padding);
+}
+
+.heading-tertiary {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.cta-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6rem;
+}
+
+.cta-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--highlight-cta);
+  color: var(--main-color);
+  padding: 2.5rem 7.5rem;
+  outline: none;
+  border: none;
+  font-weight: 3rem;
+  font-weight: 500;
+  display: inline-block;
+  transition: var(--smooth-transition);
+}
+
+.cta-button:hover {
+  background-color: var(--hover-cta);
+  color: var(--highlight);
+}
+
+.footer {
+  padding: var(--section-padding);
+  text-align: center;
+}
